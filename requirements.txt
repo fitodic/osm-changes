@@ -1,0 +1,8 @@
+GDAL==1.11.2
+GeoAlchemy2==0.2.5
+SQLAlchemy==1.0.6
+Shapely==1.5.9
+argparse==1.2.1
+jellyfish==0.5.0
+psycopg2==2.6.1
+wsgiref==0.1.2
