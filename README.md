@@ -4,6 +4,9 @@
 
 OpenStreetMap (OSM) features experience changes which can span from adding or removing certain tags to updating existing tags or geometries. These changes can increase the overall quality of the OSM dataset, but they can also indicate features affected by significant changes. This Python tool is designed to analyze and determine the quality of OSM features.
 
+---------------
+
+###Overview
 The following operations are currently available:
 
 1. Count tag inserts, deletions, updates and geometric changes
@@ -30,6 +33,8 @@ The following operations are currently available:
 7. [Jellyfish](https://pypi.python.org/pypi/jellyfish)
 8. [ArgParse](https://docs.python.org/2.7/library/argparse.html)
 
+---------------------------------
+
 ###OSM data extraction 
 * Input data: [OSM PBF](http://wiki.openstreetmap.org/wiki/Planet.osm) files
 * Modifications: [Osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), [Osmfilter](http://wiki.openstreetmap.org/wiki/Osmfilter)
@@ -52,6 +57,8 @@ $ python osm-changes/main.py "job_name" "feature_key" "feature_value" osm_versio
 ```
 $ python osm-changes/main.py -h
 ```
+
+-----------------------------------
 
 ###Examples
 See ./osm-changes/output
