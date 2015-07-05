@@ -37,7 +37,7 @@ The following operations are currently available:
 
 ###OSM data extraction 
 * Input data: [OSM PBF](http://wiki.openstreetmap.org/wiki/Planet.osm) files
-* Modifications: [Osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), [Osmfilter](http://wiki.openstreetmap.org/wiki/Osmfilter)
+* Modifications (optional): [Osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), [Osmfilter](http://wiki.openstreetmap.org/wiki/Osmfilter)
 * Usage:
 ```
 $ python osm-changes/extract.py osm-changes/data/INPUTFILE.osm.pbf
@@ -47,7 +47,7 @@ $ python osm-changes/extract.py osm-changes/data/INPUTFILE.osm.pbf
 The name of the input file should contain its creation date (the rest of the name is optional): **YYYYMMDD-name.osm.pbf**
 
 ###OSM data processing
-* Output format: GeoJSON
+* Output format: [GeoJSON](http://geojson.org/)
 * Location of the output files (and several examples): ./osm-changes/output
 * Usage:
 ```
