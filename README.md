@@ -5,14 +5,16 @@
 OpenStreetMap (OSM) features experience changes which can span from adding or removing certain tags to updating existing tags or geometries. These changes can increase the overall quality of the OSM dataset, but they can also indicate features affected by significant changes. This Python tool is designed to analyze and determine the quality of OSM features.
 
 The following operations are currently available:
-1. *Count tag inserts, deletions, updates and geometric changes*
-Detect the locations of certain types of changes.
-2. *Evaluate changes using [string matching techniques](https://en.wikipedia.org/wiki/Approximate_string_matching)*
-Use the Jaro-Winkler metrics or the Levenshtein distance to analyze the changes in certain types of tags (e.g. name, operator, etc.). The similarity between strings can be indicative of the type of changes, such as correction of typographical errors or changes in ownership.
-3. *Determine the currency of spatial objects*
-Distinguishes between up-to-date and out-of-date features by calculating the difference between the feature's timestamp and the median timestamp of the analyzed group. Inapplicable to long-standing features (e.g. castles, highways, etc.)
-4. *Estimate geometric changes*
-Movements of points, increases/reductions of lengths/areas in (Multi)LineStrings/(Multi)Polygons
+1. Count tag inserts, deletions, updates and geometric changes
+  * Detect the locations of certain types of changes
+2. Evaluate changes using [string matching techniques](https://en.wikipedia.org/wiki/Approximate_string_matching)
+  * Use the [Jaro-Winkler distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) or the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) to analyze the changes in certain types of tags (e.g. name, operator, etc.)
+  * The similarity between strings can be indicative of the type of changes, such as correction of typographical errors or changes in ownership.
+3. Determine the currency of spatial objects
+  * Distinguishes between up-to-date and out-of-date features by calculating the difference between the feature's timestamp and the median timestamp of the analyzed group
+  * Inapplicable to long-standing features (e.g. castles, highways, etc.)
+4. Estimate geometric changes
+  * Movements of points, increases/reductions of lengths/areas in (Multi)LineStrings/(Multi)Polygons
 
 ---------------------------------
 
@@ -28,9 +30,9 @@ Movements of points, increases/reductions of lengths/areas in (Multi)LineStrings
 8. [ArgParse](https://docs.python.org/2.7/library/argparse.html)
 
 ###OSM data extraction 
-Input data: [OSM PBF](http://wiki.openstreetmap.org/wiki/Planet.osm) files
-Modifications: [Osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), [Osmfilter](http://wiki.openstreetmap.org/wiki/Osmfilter)
-Usage:
+* Input data: [OSM PBF](http://wiki.openstreetmap.org/wiki/Planet.osm) files
+* Modifications: [Osmconvert](http://wiki.openstreetmap.org/wiki/Osmconvert), [Osmfilter](http://wiki.openstreetmap.org/wiki/Osmfilter)
+* Usage:
 ```
 $ python osm-changes/extract.py osm-changes/data/INPUTFILE.osm.pbf
 ```
@@ -39,13 +41,13 @@ $ python osm-changes/extract.py osm-changes/data/INPUTFILE.osm.pbf
 The name of the input file should contain its creation date (the rest of the name is optional): **YYYYMMDD-name.osm.pbf**
 
 ###OSM data processing
-Output format: GeoJSON
-Location of the output files (and several examples): ./osm-changes/output
-Usage:
+* Output format: GeoJSON
+* Location of the output files (and several examples): ./osm-changes/output
+* Usage:
 ```
 $ python osm-changes/main.py "job_name" "feature_key" "feature_value" osm_version -ogj -optional_arguments
 ```
-For more info type:
+* For more info type:
 ```
 $ python osm-changes/main.py -h
 ```
