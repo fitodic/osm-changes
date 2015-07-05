@@ -5,6 +5,7 @@
 OpenStreetMap (OSM) features experience changes which can span from adding or removing certain tags to updating existing tags or geometries. These changes can increase the overall quality of the OSM dataset, but they can also indicate features affected by significant changes. This Python tool is designed to analyze and determine the quality of OSM features.
 
 The following operations are currently available:
+
 1. Count tag inserts, deletions, updates and geometric changes
   * Detect the locations of certain types of changes
 2. Evaluate changes using [string matching techniques](https://en.wikipedia.org/wiki/Approximate_string_matching)
